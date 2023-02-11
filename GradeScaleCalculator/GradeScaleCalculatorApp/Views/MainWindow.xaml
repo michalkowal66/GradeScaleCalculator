@@ -5,8 +5,84 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GradeScaleCalculatorApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="NoResize"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        Title="Kalkulator Punktacji" 
+        Height="450" Width="600">
+    <Border Background="#1B263B" CornerRadius="6">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-    </Grid>
+            <Border Grid.Row="0" Background="#0D1B2A" CornerRadius="6,6,0,0">
+                <Grid Name="TitleBar" Margin="5,0,0,0"
+                      MouseDown="TitleBar_MouseDown">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" 
+                           Style="{StaticResource WindowTitleLabel}" 
+                           Content="Kalkulator Punktacji"/>
+
+                    <Button Name="MinimizeButton" Grid.Column="1"
+                        Style="{StaticResource MinimizeButton}"
+                        Click="MinimizeButton_Click"/>
+
+                    <Button Name="CloseButton" Grid.Column="2"
+                        Style="{StaticResource CloseButton}"
+                        Click="CloseButton_Click"/>
+
+                </Grid>
+            </Border>
+
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Border Name="NavbarBorder" Grid.Column="0" CornerRadius="0,0,0,6" Background="#0D1B2A" BorderThickness="0,0,2,0" BorderBrush="#0D1B2A">
+                    <Grid Name="NavbarGrid" Margin="5,0,5,5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Button Name="HomeNavbarButton" Grid.Row="0"
+                                Style="{StaticResource NavbarButton}">
+                            <Image Style="{StaticResource NavbarButtonImage}" Source="{StaticResource HomeIcon}"/>
+                        </Button>
+
+                        <Button Name="EditNavbarButton" Grid.Row="1"
+                                Style="{StaticResource NavbarButton}">
+                            <Image Style="{StaticResource NavbarButtonImage}" Source="{StaticResource EditIcon}"/>
+                        </Button>
+
+                        <Button Name="HelpNavbarButton" Grid.Row="3"
+                                Style="{StaticResource NavbarButton}">
+                            <Image Style="{StaticResource NavbarButtonImage}" Source="{StaticResource HelpIcon}"/>
+                        </Button>
+                    </Grid>
+                </Border>
+                
+
+                <Grid Name="ContentGrid" Grid.Column="1">
+
+                </Grid>
+                
+            </Grid>
+
+        </Grid>
+
+    </Border>
 </Window>
