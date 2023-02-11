@@ -4,6 +4,118 @@
              xmlns:local="clr-namespace:GradeScaleCalculatorApp"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
-         
+
+        <FontFamily x:Key="ApplicationFont">Segoe UI</FontFamily>
+        
+        <BitmapImage x:Key="MinimizeIcon" UriSource="Assets/minimize.png"/>
+        <BitmapImage x:Key="CloseIcon" UriSource="Assets/close.png"/>
+        
+        <BitmapImage x:Key="HomeIcon" UriSource="Assets/home.png"/>
+        <BitmapImage x:Key="EditIcon" UriSource="Assets/edit.png"/>
+        <BitmapImage x:Key="HelpIcon" UriSource="Assets/help.png"/>
+
+        <SolidColorBrush x:Key="TextForeground">#E0E1DD</SolidColorBrush>
+
+        <Style x:Key="WindowLabel" TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource TextForeground}"/>
+            <Setter Property="FontFamily" Value="{StaticResource ApplicationFont}"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style x:Key="RegularLabel" TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource TextForeground}"/>
+            <Setter Property="FontFamily" Value="{StaticResource ApplicationFont}"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        
+        <Style x:Key="WindowTitleLabel" TargetType="Label" BasedOn="{StaticResource WindowLabel}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+
+        <SolidColorBrush x:Key="Button.Default.Background" Color="#0D1B2A"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#1B263B"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#415A77"/>
+        <SolidColorBrush x:Key="CloseButton.MouseOver.Background" Color="#d00000"/>
+        <SolidColorBrush x:Key="CloseButton.Pressed.Background" Color="#dc2f02"/>
+
+        <Style x:Key="RegularButton" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Border x:Name="border" Background="{StaticResource Button.Default.Background}" BorderBrush="Transparent" BorderThickness="0" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="Button.IsDefaulted" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Default.Background}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="WindowBarButton" TargetType="Button" BasedOn="{StaticResource RegularButton}">
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="Height" Value="35"/>
+        </Style>
+
+        <Style x:Key="MinimizeButton" TargetType="Button" BasedOn="{StaticResource WindowBarButton}">
+            <Setter Property="ToolTip" Value="Zminimalizuj aplikację"/>
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Width="20" Source="{StaticResource MinimizeIcon}"/>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="CloseButton" TargetType="Button" BasedOn="{StaticResource WindowBarButton}">
+            <Setter Property="ToolTip" Value="Zamknij aplikację"/>
+            <Setter Property="Content">
+                <Setter.Value>
+                    <Image Width="30" Height="14" Source="{StaticResource CloseIcon}"/>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ButtonBase}">
+                        <Border x:Name="border" CornerRadius="0,6,0,0" Background="{StaticResource Button.Default.Background}" BorderBrush="Transparent" BorderThickness="0" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource CloseButton.MouseOver.Background}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource CloseButton.Pressed.Background}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="NavbarButton" TargetType="Button" BasedOn="{StaticResource RegularButton}">
+            <Setter Property="Width" Value="50"/>
+            <Setter Property="Height" Value="50"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <Style x:Key="NavbarButtonImage" TargetType="Image">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="30"/>
+        </Style>
+        
     </Application.Resources>
 </Application>
