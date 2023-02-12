@@ -117,5 +117,10 @@
             <Setter Property="Width" Value="30"/>
         </Style>
         
+        <Style x:Key="ButtonImage" TargetType="Image">
+            <Setter Property="Height" Value="15"/>
+            <Setter Property="Width" Value="15"/>
+        </Style>
+        
     </Application.Resources>
 </Application>
