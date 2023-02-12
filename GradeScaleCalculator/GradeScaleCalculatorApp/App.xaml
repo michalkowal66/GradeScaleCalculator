@@ -14,6 +14,10 @@
         <BitmapImage x:Key="EditIcon" UriSource="Assets/edit.png"/>
         <BitmapImage x:Key="HelpIcon" UriSource="Assets/help.png"/>
 
+        <BitmapImage x:Key="AddIcon" UriSource="Assets/add.png"/>
+        <BitmapImage x:Key="RemoveIcon" UriSource="Assets/remove.png"/>
+        <BitmapImage x:Key="ModifyIcon" UriSource="Assets/modify.png"/>
+
         <SolidColorBrush x:Key="TextForeground">#E0E1DD</SolidColorBrush>
 
         <Style x:Key="WindowLabel" TargetType="Label">
