@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="GradeScaleCalculatorApp.Views.InfoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GradeScaleCalculatorApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="550">
+    <Grid Background="#1B263B" Margin="10,0,10,5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Content="Kalkulator Punktacji" Style="{StaticResource HeaderLabel}"/>
+        <TextBlock Grid.Row="1" TextWrapping="Wrap" Style="{StaticResource InfoTextBlock}">
+            <Run Text="Aplikacja pozwalająca obliczyć punktacje dla wybranych skal ocen."/>
+            <Run Text="Aby nawigować po aplikacji skorzystaj z jednego z trzech przycisków dostępnych po lewej stronie okna."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="Korzystając z przycisku widoku głównego - "/>
+            <Image Width="20" Height="20" Source="{StaticResource HomeIcon}"/>
+            <Run Text=" - uzyskaj dostęp do obliczeń punktacji."/>
+            <LineBreak/>
+            <LineBreak/>
+            <Run Text="Korzystając z przycisku widoku edycji - "/>
+            <Image Width="20" Height="20" Source="{StaticResource EditIcon}"/>
+            <Run Text=" - uzyskaj dostęp do edytora sapisanych skali punktowych."/>
+        </TextBlock>
+        
+        <TextBlock Grid.Row="3" Style="{StaticResource RegularTextBlock}">
+            <Run Text="Autor aplikacji: Michał Kowal"/>
+            <LineBreak/>
+            <Run Text="Adres e-mail: "/>
+            <Hyperlink
+                Style="{StaticResource RegularHyperlink}"
+                NavigateUri="mailto:michal.kowal.66@gmail.com"
+                RequestNavigate="Hyperlink_RequestNavigate">
+                michal.kowal.66@gmail.com
+            </Hyperlink>
+            <Run Text=" Github: "/>
+            <Hyperlink 
+                Style="{StaticResource RegularHyperlink}" 
+                NavigateUri="https://github.com/michalkowal66/"
+                RequestNavigate="Hyperlink_RequestNavigate">
+                michalkowal66
+            </Hyperlink>
+            <LineBreak/>
+            <Run Text="Ikony: "/>
+            <Hyperlink 
+                Style="{StaticResource RegularHyperlink}" 
+                NavigateUri="https://uxwing.com"
+                RequestNavigate="Hyperlink_RequestNavigate">
+                UxWing
+            </Hyperlink>
+        </TextBlock>
+    </Grid>
+</UserControl>
