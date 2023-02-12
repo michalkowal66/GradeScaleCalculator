@@ -76,6 +76,11 @@
                     <Image Width="20" Source="{StaticResource MinimizeIcon}"/>
                 </Setter.Value>
             </Setter>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="0"/>
+                </Style>
+            </Style.Resources>
         </Style>
 
         <Style x:Key="CloseButton" TargetType="Button" BasedOn="{StaticResource WindowBarButton}">
