@@ -19,6 +19,7 @@
         <BitmapImage x:Key="ModifyIcon" UriSource="Assets/modify.png"/>
 
         <SolidColorBrush x:Key="TextForeground">#E0E1DD</SolidColorBrush>
+        <SolidColorBrush x:Key="HyperlinkForeground">#a8dadc</SolidColorBrush>
 
         <Style x:Key="WindowLabel" TargetType="Label">
             <Setter Property="Foreground" Value="{StaticResource TextForeground}"/>
