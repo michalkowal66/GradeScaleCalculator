@@ -1,0 +1,186 @@
+﻿<UserControl x:Class="GradeScaleCalculatorApp.Views.EditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GradeScaleCalculatorApp.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="{StaticResource LightBackground}" Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" HorizontalAlignment="Right"
+                   Style="{StaticResource RegularLabel}"
+                   Content="Skala:"/>
+
+            <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" SelectedIndex="0"
+                Style="{StaticResource RegularComboBox}">
+                <ComboBoxItem Content="SP Łęg Tarnowski"/>
+                <ComboBoxItem Content="SP Bobrowniki"/>
+                <ComboBoxItem Content="SP Nieciecza"/>
+            </ComboBox>
+
+            <Button Grid.Row="0" Grid.Column="3" Margin="5,0,0,0"
+                    Style="{StaticResource RegularButton}">
+                <Image Style="{StaticResource ButtonImage}" Source="{StaticResource RemoveIcon}"/>
+            </Button>
+
+            <Label Grid.Row="1" Grid.Column="0"
+                   Style="{StaticResource RegularLabel}"
+                   Content="Nazwa:"/>
+
+            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource RegularTextBox}"/>
+
+            <Button Grid.Row="1" Grid.Column="2" Margin="5,0,0,0"
+                    Style="{StaticResource RegularButton}">
+                <Image Style="{StaticResource ButtonImage}" Source="{StaticResource ModifyIcon}"/>
+            </Button>
+
+            <Button Grid.Row="1" Grid.Column="3" Margin="5,0,0,0"
+                    Style="{StaticResource RegularButton}">
+                <Image Style="{StaticResource ButtonImage}" Source="{StaticResource AddIcon}"/>
+            </Button>
+
+        </Grid>
+
+        <Grid Grid.Row="1" VerticalAlignment="Bottom">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="45"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                   Style="{StaticResource RegularLabel}"
+                   Content="Ocena"/>
+
+            <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom"
+                   Style="{StaticResource CenteredLabel}"
+                   Content="Od [%]"/>
+
+            <Label Grid.Row="0" Grid.Column="3" VerticalAlignment="Bottom"
+                   Style="{StaticResource CenteredLabel}"
+                   Content="Do [%]"/>
+            
+            
+            <Label Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right"
+                   Style="{StaticResource RegularLabel}"
+                   Content="Celujący (6):"/>
+            
+            <TextBox Grid.Row="1" Grid.Column="1"
+                     Style="{StaticResource NumericTextBox}"/>
+            <Label Grid.Row="1" Grid.Column="2"
+                   Style="{StaticResource CenteredLabel}" 
+                   Content="-"/>
+            <TextBox Grid.Row="1" Grid.Column="3"
+                     Style="{StaticResource NumericTextBox}"/>
+
+            
+            <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"
+                   Style="{StaticResource RegularLabel}"
+                   Content="Bardzo dobry (5):"/>
+            
+            <TextBox Grid.Row="2" Grid.Column="1" 
+                     Style="{StaticResource NumericTextBox}"/>
+            <Label Grid.Row="2" Grid.Column="2"
+                   Style="{StaticResource CenteredLabel}" 
+                   Content="-"/>
+            <TextBox Grid.Row="2" Grid.Column="3" 
+                     Style="{StaticResource NumericTextBox}"/>
+
+            
+            <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"
+                   Style="{StaticResource RegularLabel}"
+                   Content="Dobry (4):"/>
+            
+            <TextBox Grid.Row="3" Grid.Column="1" 
+                     Style="{StaticResource NumericTextBox}"/>
+            <Label Grid.Row="3" Grid.Column="2"
+                   Style="{StaticResource CenteredLabel}" 
+                   Content="-"/>
+            <TextBox Grid.Row="3" Grid.Column="3" 
+                     Style="{StaticResource NumericTextBox}"/>
+
+            
+            <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right"
+                   Style="{StaticResource RegularLabel}"
+                   Content="Dostateczny (3):"/>
+            
+            <TextBox Grid.Row="4" Grid.Column="1" 
+                     Style="{StaticResource NumericTextBox}"/>
+            <Label Grid.Row="4" Grid.Column="2"
+                   Style="{StaticResource CenteredLabel}" 
+                   Content="-"/>
+            <TextBox Grid.Row="4" Grid.Column="3" 
+                     Style="{StaticResource NumericTextBox}"/>
+
+            
+            <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right"
+                   Style="{StaticResource RegularLabel}"
+                   Content="Dopuszczający (2):"/>
+            
+            <TextBox Grid.Row="5" Grid.Column="1" 
+                     Style="{StaticResource NumericTextBox}"/>
+            <Label Grid.Row="5" Grid.Column="2"
+                   Style="{StaticResource CenteredLabel}" 
+                   Content="-"/>
+            <TextBox Grid.Row="5" Grid.Column="3" 
+                     Style="{StaticResource NumericTextBox}"/>
+
+            
+            <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right"
+                   Style="{StaticResource RegularLabel}"
+                   Content="Niedostateczny (1):"/>
+            
+            <TextBox Grid.Row="6" Grid.Column="1"
+                     Style="{StaticResource NumericTextBox}"/>
+            <Label Grid.Row="6" Grid.Column="2"
+                   Style="{StaticResource CenteredLabel}" 
+                   Content="-"/>
+            <TextBox Grid.Row="6" Grid.Column="3" 
+                     Style="{StaticResource NumericTextBox}"/>
+
+            
+            <Label Grid.Row="0" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                   Style="{StaticResource HeaderLabel}" 
+                   Content="Edytowanie skal:"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="5" Grid.RowSpan="7" 
+                       Style="{StaticResource InfoTextBlock}">
+                <Run Text="Wprowadź wartości procentowe do odpowiednich pól aby zdefiniować zakresy."/>
+                <LineBreak/>
+                <LineBreak/>
+                <Run Text="Skorzystaj z przycisków dostępnych w górnej części okna aby usunąć skalę, zmodyfikować, lub zapisać jako nową."/>
+            </TextBlock>
+            
+        </Grid>
+    </Grid>
+</UserControl>
