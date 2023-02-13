@@ -20,6 +20,9 @@
 
         <SolidColorBrush x:Key="TextForeground">#E0E1DD</SolidColorBrush>
         <SolidColorBrush x:Key="HyperlinkForeground">#a8dadc</SolidColorBrush>
+        <SolidColorBrush x:Key="DarkBackground">#0D1B2A</SolidColorBrush>
+        <SolidColorBrush x:Key="LightBackground">#1B263B</SolidColorBrush>
+        <SolidColorBrush x:Key="SelectionBrush">#778DA9</SolidColorBrush>
 
         <Style x:Key="RegularLabel" TargetType="Label">
             <Setter Property="Foreground" Value="{StaticResource TextForeground}"/>
