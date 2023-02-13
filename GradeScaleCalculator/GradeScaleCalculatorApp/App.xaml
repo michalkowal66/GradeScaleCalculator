@@ -27,6 +27,7 @@
         <Style x:Key="RegularLabel" TargetType="Label">
             <Setter Property="Foreground" Value="{StaticResource TextForeground}"/>
             <Setter Property="FontFamily" Value="{StaticResource ApplicationFont}"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="16"/>
         </Style>
 
