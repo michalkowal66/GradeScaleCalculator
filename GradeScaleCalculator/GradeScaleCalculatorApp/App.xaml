@@ -165,5 +165,50 @@
             <Setter Property="Width" Value="15"/>
         </Style>
         
+        <Style x:Key="RegularTextBox" TargetType="TextBox">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="SelectionBrush" Value="{StaticResource SelectionBrush}"/>
+            <Setter Property="TextWrapping" Value="NoWrap"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="{StaticResource DarkBackground}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBoxBase}">
+                        <Border x:Name="border"
+                        Background="{StaticResource TextForeground}"
+                        BorderBrush="{StaticResource DarkBackground}"
+                        CornerRadius="6"
+                        BorderThickness="2"
+                        SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" 
+                            Focusable="false" 
+                            HorizontalScrollBarVisibility="Hidden" 
+                            VerticalScrollBarVisibility="Hidden" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter TargetName="border" Property="Opacity" Value="0.56"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.MouseOver.Background}" />
+                            </Trigger>
+                            <Trigger Property="IsKeyboardFocused" Value="true">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource Button.Pressed.Background}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="NumericTextBox" TargetType="TextBox" BasedOn="{StaticResource RegularTextBox}">
+            <Setter Property="Width" Value="60"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="MaxLength" Value="3"/>
+        </Style>
+
     </Application.Resources>
 </Application>
