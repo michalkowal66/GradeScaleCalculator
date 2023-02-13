@@ -18,10 +18,19 @@ namespace GradeScaleCalculatorApp.ViewModels
             get => _currentViewModel;
             set => SetProperty(ref _currentViewModel, value);
         }
-   
+
         public MainViewModel()
         {
             CurrentViewModel = HomeViewModel;
+
+            ChangeViewModelCommand = new RelayCommand<ObservableObject>(ChangeViewModel);
+        }
+
+        public IRelayCommand<ObservableObject> ChangeViewModelCommand { get; }
+
+        private void ChangeViewModel(ObservableObject viewModel)
+        {
+            if (CurrentViewModel != viewModel) CurrentViewModel = viewModel;
         }
     }
 }
