@@ -59,25 +59,30 @@
                         </Grid.RowDefinitions>
 
                         <Button Name="HomeNavbarButton" Grid.Row="0"
-                                Style="{StaticResource NavbarButton}">
+                                Style="{StaticResource NavbarButton}"
+                                Command="{Binding ChangeViewModelCommand}"
+                                CommandParameter="{Binding HomeViewModel}">
                             <Image Style="{StaticResource NavbarButtonImage}" Source="{StaticResource HomeIcon}"/>
                         </Button>
 
                         <Button Name="EditNavbarButton" Grid.Row="1"
-                                Style="{StaticResource NavbarButton}">
+                                Style="{StaticResource NavbarButton}"
+                                Command="{Binding ChangeViewModelCommand}"
+                                CommandParameter="{Binding EditViewModel}">
                             <Image Style="{StaticResource NavbarButtonImage}" Source="{StaticResource EditIcon}"/>
                         </Button>
 
                         <Button Name="HelpNavbarButton" Grid.Row="3"
-                                Style="{StaticResource NavbarButton}">
+                                Style="{StaticResource NavbarButton}"
+                                Command="{Binding ChangeViewModelCommand}"
+                                CommandParameter="{Binding InfoViewModel}">
                             <Image Style="{StaticResource NavbarButtonImage}" Source="{StaticResource HelpIcon}"/>
                         </Button>
                     </Grid>
                 </Border>
                 
-
                 <Grid Name="ContentGrid" Grid.Column="1">
-
+                    <ContentControl Content="{Binding CurrentViewModel}"/>
                 </Grid>
                 
             </Grid>
