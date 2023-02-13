@@ -19,5 +19,9 @@ namespace GradeScaleCalculatorApp.ViewModels
             set => SetProperty(ref _currentViewModel, value);
         }
    
+        public MainViewModel()
+        {
+            CurrentViewModel = HomeViewModel;
+        }
     }
 }
