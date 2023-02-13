@@ -27,7 +27,7 @@
             <LineBreak/>
             <Run Text="Korzystając z przycisku widoku edycji - "/>
             <Image Width="20" Height="20" Source="{StaticResource EditIcon}"/>
-            <Run Text=" - uzyskaj dostęp do edytora sapisanych skali punktowych."/>
+            <Run Text=" - uzyskaj dostęp do edytora zapisanych skali punktowych."/>
         </TextBlock>
         
         <TextBlock Grid.Row="3" Style="{StaticResource RegularTextBlock}">
