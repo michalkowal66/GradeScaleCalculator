@@ -53,6 +53,7 @@
             <Setter Property="Foreground" Value="{StaticResource TextForeground}"/>
             <Setter Property="FontFamily" Value="{StaticResource ApplicationFont}"/>
             <Setter Property="FontSize" Value="14"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
         
         <Style x:Key="InfoTextBlock" TargetType="TextBlock" BasedOn="{StaticResource RegularTextBlock}">
