@@ -24,6 +24,12 @@
         <SolidColorBrush x:Key="LightBackground">#1B263B</SolidColorBrush>
         <SolidColorBrush x:Key="SelectionBrush">#778DA9</SolidColorBrush>
 
+        <SolidColorBrush x:Key="Button.Default.Background" Color="#0D1B2A"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#415A77"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#778DA9"/>
+        <SolidColorBrush x:Key="CloseButton.MouseOver.Background" Color="#d00000"/>
+        <SolidColorBrush x:Key="CloseButton.Pressed.Background" Color="#dc2f02"/>
+
         <Style x:Key="RegularLabel" TargetType="Label">
             <Setter Property="Foreground" Value="{StaticResource TextForeground}"/>
             <Setter Property="FontFamily" Value="{StaticResource ApplicationFont}"/>
@@ -63,12 +69,6 @@
         <Style x:Key="RegularHyperlink" TargetType="Hyperlink">
             <Setter Property="Foreground" Value="{StaticResource HyperlinkForeground}"/>
         </Style>
-
-        <SolidColorBrush x:Key="Button.Default.Background" Color="#0D1B2A"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#415A77"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#778DA9"/>
-        <SolidColorBrush x:Key="CloseButton.MouseOver.Background" Color="#d00000"/>
-        <SolidColorBrush x:Key="CloseButton.Pressed.Background" Color="#dc2f02"/>
 
         <Style x:Key="RegularButton" TargetType="Button">
             <Setter Property="Width" Value="30"/>
