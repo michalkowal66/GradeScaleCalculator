@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using GradeScaleCalculatorApp.Models;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 
 namespace GradeScaleCalculatorApp.ViewModels
@@ -51,10 +52,30 @@ namespace GradeScaleCalculatorApp.ViewModels
             }
         }
 
+        private void RefreshCurrentGradingScale(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            switch (e.Action)
+            {
+                case NotifyCollectionChangedAction.Remove:
+                    if (e.OldItems.Contains(CurrentGradingScale)) CurrentGradingScale = GradingScales.First();
+                    break;
+                case NotifyCollectionChangedAction.Replace:
+                    if (CurrentGradingScale == e.OldItems.Cast<GradingScale>().First())
+                    {
+                        CurrentGradingScale = e.NewItems.Cast<GradingScale>().First();
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+
         public HomeViewModel(ObservableCollection<GradingScale> gradingScales)
         {
             GradingScales = gradingScales;
             CurrentGradingScale = GradingScales.First();
+
+            GradingScales.CollectionChanged += RefreshCurrentGradingScale;
         }
     }
 }
