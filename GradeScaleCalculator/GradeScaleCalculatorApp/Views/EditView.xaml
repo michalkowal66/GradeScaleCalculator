@@ -2,7 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:GradeScaleCalculatorApp.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
@@ -29,14 +29,15 @@
                    Content="Skala:"/>
 
             <ComboBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" SelectedIndex="0"
-                Style="{StaticResource RegularComboBox}">
-                <ComboBoxItem Content="SP Łęg Tarnowski"/>
-                <ComboBoxItem Content="SP Bobrowniki"/>
-                <ComboBoxItem Content="SP Nieciecza"/>
-            </ComboBox>
+                Style="{StaticResource RegularComboBox}"
+                ItemsSource="{Binding GradingScales}"
+                SelectedItem="{Binding CurrentGradingScale}"
+                DisplayMemberPath="Name"/>
 
             <Button Grid.Row="0" Grid.Column="3" Margin="5,0,0,0"
-                    Style="{StaticResource RegularButton}">
+                    Style="{StaticResource RegularButton}"
+                    Command="{Binding RemoveGradingScaleCommand}"
+                    CommandParameter="{Binding CurrentGradingScale}">
                 <Image Style="{StaticResource ButtonImage}" Source="{StaticResource RemoveIcon}"/>
             </Button>
 
@@ -44,15 +45,21 @@
                    Style="{StaticResource RegularLabel}"
                    Content="Nazwa:"/>
 
-            <TextBox Grid.Row="1" Grid.Column="1" Style="{StaticResource RegularTextBox}"/>
+            <TextBox Grid.Row="1" Grid.Column="1" 
+                     Style="{StaticResource RegularTextBox}"
+                     Text="{Binding EditedGradingScale.Name, UpdateSourceTrigger=PropertyChanged}"/>
 
             <Button Grid.Row="1" Grid.Column="2" Margin="5,0,0,0"
-                    Style="{StaticResource RegularButton}">
+                    Style="{StaticResource RegularButton}"
+                    Command="{Binding ModifyGradingScaleCommand}"
+                    CommandParameter="{Binding EditedGradingScale}">
                 <Image Style="{StaticResource ButtonImage}" Source="{StaticResource ModifyIcon}"/>
             </Button>
 
             <Button Grid.Row="1" Grid.Column="3" Margin="5,0,0,0"
-                    Style="{StaticResource RegularButton}">
+                    Style="{StaticResource RegularButton}"
+                    Command="{Binding AddGradingScaleCommand}"
+                    CommandParameter="{Binding EditedGradingScale}">
                 <Image Style="{StaticResource ButtonImage}" Source="{StaticResource AddIcon}"/>
             </Button>
 
@@ -96,12 +103,14 @@
                    Content="Celujący (6):"/>
             
             <TextBox Grid.Row="1" Grid.Column="1"
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.AGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="1" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="1" Grid.Column="3"
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.AGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
             <Label Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right"
@@ -109,12 +118,14 @@
                    Content="Bardzo dobry (5):"/>
             
             <TextBox Grid.Row="2" Grid.Column="1" 
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.BGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="2" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="2" Grid.Column="3" 
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.BGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
             <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"
@@ -122,12 +133,14 @@
                    Content="Dobry (4):"/>
             
             <TextBox Grid.Row="3" Grid.Column="1" 
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.CGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="3" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="3" Grid.Column="3" 
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.CGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
             <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right"
@@ -135,12 +148,14 @@
                    Content="Dostateczny (3):"/>
             
             <TextBox Grid.Row="4" Grid.Column="1" 
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.DGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="4" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="4" Grid.Column="3" 
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.DGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
             <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right"
@@ -148,12 +163,14 @@
                    Content="Dopuszczający (2):"/>
             
             <TextBox Grid.Row="5" Grid.Column="1" 
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.EGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="5" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="5" Grid.Column="3" 
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.EGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
             <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right"
@@ -161,12 +178,14 @@
                    Content="Niedostateczny (1):"/>
             
             <TextBox Grid.Row="6" Grid.Column="1"
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.FGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="6" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="6" Grid.Column="3" 
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding EditedGradingScale.FGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
             <Label Grid.Row="0" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Bottom"
