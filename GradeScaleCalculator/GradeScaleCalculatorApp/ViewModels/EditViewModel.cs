@@ -43,6 +43,7 @@ namespace GradeScaleCalculatorApp.ViewModels
             CurrentGradingScale = GradingScales.First();
 
             ModifyGradingScaleCommand = new RelayCommand<GradingScale>(ModifyGradingScale);
+            AddGradingScaleCommand = new RelayCommand<GradingScale>(AddGradingScale);
         }
 
         public RelayCommand<GradingScale> ModifyGradingScaleCommand { get; }
@@ -51,6 +52,21 @@ namespace GradeScaleCalculatorApp.ViewModels
         {
             GradingScales[GradingScales.IndexOf(CurrentGradingScale)] = gradingScale;
 
+            CurrentGradingScale = gradingScale;
+        }
+
+
+        public RelayCommand<GradingScale> AddGradingScaleCommand { get; }
+
+        private void AddGradingScale(GradingScale gradingScale)
+        {
+            if (GradingScales.FirstOrDefault(s => s.Name == gradingScale.Name) != null)
+            {
+                ModifyGradingScaleCommand.Execute(gradingScale);
+                return;
+            }
+
+            GradingScales.Add(gradingScale);
             CurrentGradingScale = gradingScale;
         }
     }
