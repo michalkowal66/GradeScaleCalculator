@@ -24,18 +24,19 @@
                    Style="{StaticResource RegularLabel}"
                    Content="Skala:"/>
 
-            <ComboBox Grid.Column="1" Style="{StaticResource RegularComboBox}" SelectedIndex="0">
-                <ComboBoxItem Content="SP Łęg Tarnowski"/>
-                <ComboBoxItem Content="SP Bobrowniki"/>
-                <ComboBoxItem Content="SP Nieciecza"/>
-            </ComboBox>
+            <ComboBox Grid.Column="1" SelectedIndex="0"
+                      Style="{StaticResource RegularComboBox}"
+                      ItemsSource="{Binding GradingScales}"
+                      SelectedItem="{Binding CurrentGradingScale}"
+                      DisplayMemberPath="Name"/>
 
             <Label Grid.Column="2" Margin="10,0,0,0" 
                    Style="{StaticResource RegularLabel}"
                    Content="Max. pkt.:"/>
 
             <TextBox Grid.Column="3" MaxLength="4"
-                     Style="{StaticResource NumericTextBox}"/>
+                     Style="{StaticResource NumericTextBox}"
+                     Text="{Binding MaxPoints, UpdateSourceTrigger=PropertyChanged}"/>
 
         </Grid>
 
@@ -65,7 +66,7 @@
 
             <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="9" HorizontalAlignment="Center" VerticalAlignment="Bottom"
                    Style="{StaticResource HeaderLabel}"
-                   Content="Punktacja dla wybranej skali:" />
+                   Content="Punktacja dla wybranej skali:"/>
 
             <Label Grid.Row="1" Grid.Column="0" VerticalAlignment="Bottom" HorizontalAlignment="Right"
                    Style="{StaticResource RegularLabel}"
@@ -94,23 +95,23 @@
 
             <Label Grid.Row="2" Grid.Column="1" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="96%"/>
+                   Content="{Binding CurrentGradingScale.AGrade.GradeMin, Mode=OneWay}"/>
             <Label Grid.Row="2" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="2" Grid.Column="3" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="100%"/>
+                   Content="{Binding CurrentGradingScale.AGrade.GradeMax, Mode=OneWay}"/>
 
             <Label Grid.Row="2" Grid.Column="5" 
                    Style="{StaticResource CenteredLabel}"
-                   Content="96"/>
+                   Content="{Binding CalculatedScoring.AGrade.GradeMin}"/>
             <Label Grid.Row="2" Grid.Column="6"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="2" Grid.Column="7" 
                    Style="{StaticResource CenteredLabel}"
-                   Content="100"/>
+                   Content="{Binding CalculatedScoring.AGrade.GradeMax}"/>
             
             
             <Label Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"
@@ -119,23 +120,23 @@
 
             <Label Grid.Row="3" Grid.Column="1" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="85%"/>
+                   Content="{Binding CurrentGradingScale.BGrade.GradeMin, Mode=OneWay}"/>
             <Label Grid.Row="3" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="3" Grid.Column="3" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="95%"/>
+                   Content="{Binding CurrentGradingScale.BGrade.GradeMax, Mode=OneWay}"/>
 
             <Label Grid.Row="3" Grid.Column="5" 
                    Style="{StaticResource CenteredLabel}"
-                   Content="85"/>
+                   Content="{Binding CalculatedScoring.BGrade.GradeMin}"/>
             <Label Grid.Row="3" Grid.Column="6"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="3" Grid.Column="7" 
                    Style="{StaticResource CenteredLabel}"
-                   Content="95"/>
+                   Content="{Binding CalculatedScoring.BGrade.GradeMax}"/>
             
             
             <Label Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right"
@@ -144,23 +145,23 @@
 
             <Label Grid.Row="4" Grid.Column="1" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="70%"/>
+                   Content="{Binding CurrentGradingScale.CGrade.GradeMin, Mode=OneWay}"/>
             <Label Grid.Row="4" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="4" Grid.Column="3" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="84%"/>
+                   Content="{Binding CurrentGradingScale.CGrade.GradeMax, Mode=OneWay}"/>
 
             <Label Grid.Row="4" Grid.Column="5" 
                    Style="{StaticResource CenteredLabel}"
-                   Content="70"/>
+                   Content="{Binding CalculatedScoring.CGrade.GradeMin}"/>
             <Label Grid.Row="4" Grid.Column="6"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="4" Grid.Column="7"
                    Style="{StaticResource CenteredLabel}"
-                   Content="84"/>
+                   Content="{Binding CalculatedScoring.CGrade.GradeMax}"/>
             
             
             <Label Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right"
@@ -169,23 +170,23 @@
 
             <Label Grid.Row="5" Grid.Column="1" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="55%"/>
+                   Content="{Binding CurrentGradingScale.DGrade.GradeMin, Mode=OneWay}"/>
             <Label Grid.Row="5" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="5" Grid.Column="3" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="65%"/>
+                   Content="{Binding CurrentGradingScale.DGrade.GradeMax, Mode=OneWay}"/>
 
             <Label Grid.Row="5" Grid.Column="5" 
                    Style="{StaticResource CenteredLabel}"
-                   Content="55"/>
+                   Content="{Binding CalculatedScoring.DGrade.GradeMin}"/>
             <Label Grid.Row="5" Grid.Column="6"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="5" Grid.Column="7" 
                    Style="{StaticResource CenteredLabel}"
-                   Content="65"/>
+                   Content="{Binding CalculatedScoring.DGrade.GradeMax}"/>
 
 
             <Label Grid.Row="6" Grid.Column="0" HorizontalAlignment="Right"
@@ -194,23 +195,23 @@
 
             <Label Grid.Row="6" Grid.Column="1" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="41%"/>
+                   Content="{Binding CurrentGradingScale.EGrade.GradeMin, Mode=OneWay}"/>
             <Label Grid.Row="6" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="6" Grid.Column="3" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="54%"/>
+                   Content="{Binding CurrentGradingScale.EGrade.GradeMax, Mode=OneWay}"/>
             
             <Label Grid.Row="6" Grid.Column="5" 
                    Style="{StaticResource CenteredLabel}"
-                   Content="41"/>
+                   Content="{Binding CalculatedScoring.EGrade.GradeMin}"/>
             <Label Grid.Row="6" Grid.Column="6"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="6" Grid.Column="7" 
                    Style="{StaticResource CenteredLabel}"
-                   Content="54"/>
+                   Content="{Binding CalculatedScoring.EGrade.GradeMax}"/>
 
             
             <Label Grid.Row="7" Grid.Column="0" HorizontalAlignment="Right"
@@ -219,23 +220,23 @@
 
             <Label Grid.Row="7" Grid.Column="1" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="0%"/>
+                   Content="{Binding CurrentGradingScale.FGrade.GradeMin, Mode=OneWay}"/>
             <Label Grid.Row="7" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="7" Grid.Column="3" Width="60"
                    Style="{StaticResource CenteredLabel}" 
-                   Content="40%"/>
+                   Content="{Binding CurrentGradingScale.FGrade.GradeMax, Mode=OneWay}"/>
 
             <Label Grid.Row="7" Grid.Column="5"
                    Style="{StaticResource CenteredLabel}"
-                   Content="0"/>
+                   Content="{Binding CalculatedScoring.FGrade.GradeMin}"/>
             <Label Grid.Row="7" Grid.Column="6"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <Label Grid.Row="7" Grid.Column="7" 
                    Style="{StaticResource CenteredLabel}"
-                   Content="40"/>
+                   Content="{Binding CalculatedScoring.FGrade.GradeMax}"/>
 
         </Grid>
     </Grid>
