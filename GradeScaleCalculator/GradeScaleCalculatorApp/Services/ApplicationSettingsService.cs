@@ -23,9 +23,20 @@ namespace GradeScaleCalculatorApp.Services
             string appSettingsFolder = GetAppSettingsFolder();
 
             string gradingScalesSettingsFile = Path.Combine(appSettingsFolder, GradingScalesSettingsFilename);
-            if (!File.Exists(gradingScalesSettingsFile)) File.Create(gradingScalesSettingsFile);
+            if (!File.Exists(gradingScalesSettingsFile)) CreateDefaultGradingScalesSettingsFile(gradingScalesSettingsFile);
 
             return gradingScalesSettingsFile;
+        }
+
+        private static void CreateDefaultGradingScalesSettingsFile(string settingsFilePath)
+        {
+            string defaultSettingsContent = ApplicationResourcesService.GetEmbeddedResourceContent(GradingScalesSettingsFilename);
+
+            using (FileStream settingsFile = File.Create(settingsFilePath))
+            {
+                byte[] defaultSettingsContentBytes = new UTF8Encoding(true).GetBytes(defaultSettingsContent);
+                settingsFile.Write(defaultSettingsContentBytes, 0, defaultSettingsContentBytes.Length);
+            }
         }
     }
 }
