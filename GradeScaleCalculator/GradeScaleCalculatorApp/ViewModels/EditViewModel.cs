@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GradeScaleCalculatorApp.Models;
+using GradeScaleCalculatorApp.Services;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -54,6 +55,8 @@ namespace GradeScaleCalculatorApp.ViewModels
             GradingScales[GradingScales.IndexOf(CurrentGradingScale)] = gradingScale;
 
             CurrentGradingScale = gradingScale;
+
+            ApplicationSettingsService.WriteGradingScalesToSettings(GradingScales);
         }
 
 
@@ -69,6 +72,8 @@ namespace GradeScaleCalculatorApp.ViewModels
 
             GradingScales.Add(gradingScale);
             CurrentGradingScale = gradingScale;
+
+            ApplicationSettingsService.WriteGradingScalesToSettings(GradingScales);
         }
 
         public RelayCommand RemoveGradingScaleCommand { get; }
@@ -79,6 +84,8 @@ namespace GradeScaleCalculatorApp.ViewModels
             GradingScales.Remove(CurrentGradingScale);
 
             CurrentGradingScale = GradingScales.First();
+
+            ApplicationSettingsService.WriteGradingScalesToSettings(GradingScales);
         }
     }
 }
