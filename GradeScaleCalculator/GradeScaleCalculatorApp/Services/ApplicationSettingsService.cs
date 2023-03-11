@@ -38,5 +38,14 @@ namespace GradeScaleCalculatorApp.Services
                 settingsFile.Write(defaultSettingsContentBytes, 0, defaultSettingsContentBytes.Length);
             }
         }
+
+        public static string GetGradingScalesSettingsFileContent()
+        {
+            string gradingScalesSettingsFile = GetGradingScalesSettingsFile();
+
+            string settingsFileContent = File.ReadAllText(gradingScalesSettingsFile);
+
+            return settingsFileContent;
+        }
     }
 }
