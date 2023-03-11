@@ -1,0 +1,56 @@
+[
+   {
+      "Name":"Testowa skala",
+      "AGrade":{
+         "GradeMin":95.0,
+         "GradeMax":100.0
+      },
+      "BGrade":{
+         "GradeMin":85.0,
+         "GradeMax":95.0
+      },
+      "CGrade":{
+         "GradeMin":70.0,
+         "GradeMax":85.0
+      },
+      "DGrade":{
+         "GradeMin":55.0,
+         "GradeMax":70.0
+      },
+      "EGrade":{
+         "GradeMin":40.0,
+         "GradeMax":55.0
+      },
+      "FGrade":{
+         "GradeMin":0.0,
+         "GradeMax":40.0
+      }
+   },
+   {
+      "Name":"Testowa skala 2",
+      "AGrade":{
+         "GradeMin":90.0,
+         "GradeMax":100.0
+      },
+      "BGrade":{
+         "GradeMin":85.0,
+         "GradeMax":90.0
+      },
+      "CGrade":{
+         "GradeMin":70.0,
+         "GradeMax":85.0
+      },
+      "DGrade":{
+         "GradeMin":55.0,
+         "GradeMax":70.0
+      },
+      "EGrade":{
+         "GradeMin":40.0,
+         "GradeMax":55.0
+      },
+      "FGrade":{
+         "GradeMin":0.0,
+         "GradeMax":40.0
+      }
+   }
+]
