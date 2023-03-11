@@ -8,7 +8,7 @@ namespace GradeScaleCalculatorApp.Services
     {
         public static string SerializeScales(IEnumerable<GradingScale> gradingScale)
         {
-            string serializedGradingScales = JsonConvert.SerializeObject(gradingScale);
+            string serializedGradingScales = JsonConvert.SerializeObject(gradingScale, Formatting.Indented);
 
             return serializedGradingScales;
         }
