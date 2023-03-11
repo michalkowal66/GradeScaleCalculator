@@ -1,8 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GradeScaleCalculatorApp.Models;
+using GradeScaleCalculatorApp.Services;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace GradeScaleCalculatorApp.ViewModels
 {
@@ -32,11 +32,7 @@ namespace GradeScaleCalculatorApp.ViewModels
 
         public MainViewModel()
         {
-            GradingScales = new ObservableCollection<GradingScale>() 
-            { 
-                new GradingScale(), 
-                new GradingScale() { Name = "Domyślna skala 2", AGrade = new GradeRange(90, 100), BGrade = new GradeRange(85, 90) } 
-            };
+            GradingScales = GradingScalesFactoryService.GetGradingScales();
 
             HomeViewModel = new(GradingScales);
             EditViewModel = new(GradingScales);

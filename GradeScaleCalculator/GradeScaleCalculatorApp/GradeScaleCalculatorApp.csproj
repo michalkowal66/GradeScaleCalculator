@@ -16,11 +16,17 @@
     <None Remove="Assets\home.png" />
     <None Remove="Assets\minimize.png" />
     <None Remove="Assets\modify.png" />
+    <None Remove="Assets\punktacje.json" />
     <None Remove="Assets\remove.png" />
+    <None Remove="Resources\punktacje.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\punktacje.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -38,6 +44,21 @@
     <Resource Include="Assets\minimize.png" />
     <Resource Include="Assets\modify.png" />
     <Resource Include="Assets\remove.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
