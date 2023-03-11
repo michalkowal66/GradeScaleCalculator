@@ -27,7 +27,11 @@ namespace GradeScaleCalculatorApp.ViewModels
         public ObservableCollection<GradingScale> GradingScales
         {
             get => _gradingScales;
-            set => SetProperty(ref _gradingScales, value);
+            set
+            {
+                if (value.Count == 0) value = new ObservableCollection<GradingScale>() { new GradingScale() };
+                SetProperty(ref _gradingScales, value);
+            }
         }
 
         public MainViewModel()
