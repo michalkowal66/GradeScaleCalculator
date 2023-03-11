@@ -47,5 +47,13 @@ namespace GradeScaleCalculatorApp.Services
 
             return settingsFileContent;
         }
+
+        public static void WriteGradingScalesToSettings(IEnumerable<GradingScale> gradingScales)
+        {
+            string settingsContent = GradingScalesSerializer.SerializeScales(gradingScales);
+            string settingsFile = GetGradingScalesSettingsFile();
+
+            File.WriteAllText(settingsFile, settingsContent);
+        }
     }
 }
