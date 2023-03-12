@@ -1,5 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using System;
+using System.Globalization;
 
 namespace GradeScaleCalculatorApp.Models
 {
@@ -8,22 +9,51 @@ namespace GradeScaleCalculatorApp.Models
         private double _gradeMin;
         private double _gradeMax;
 
-        public double GradeMin
+        private bool _isPercentageRange;
+
+        public string GradeMin
+        {
+            get => GradeMinValue.ToString();
+            set
+            {
+                if (!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out double parsedInput)) parsedInput = 0.0;
+                if (IsPercentageRange) parsedInput = parsedInput > 100 ? 100 : parsedInput;
+                SetProperty(ref _gradeMin, parsedInput);
+            }
+        }
+
+        public double GradeMinValue
         {
             get => Math.Round(_gradeMin);
-            set => SetProperty(ref _gradeMin, value);
         }
 
-        public double GradeMax
+        public string GradeMax
+        {
+            get => GradeMaxValue.ToString();
+            set
+            {
+                if (!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out double parsedInput)) parsedInput = 0.0;
+                if (IsPercentageRange) parsedInput = parsedInput > 100 ? 100 : parsedInput;
+                SetProperty(ref _gradeMax, parsedInput);
+            }
+        }
+
+        public double GradeMaxValue
         {
             get => Math.Round(_gradeMax);
-            set => SetProperty(ref _gradeMax, value);
         }
 
-        public GradeRange(double gradeMin, double gradeMax) 
+        public bool IsPercentageRange
         {
-            GradeMin = gradeMin;
-            GradeMax = gradeMax;
+            get => _isPercentageRange;
+            set => SetProperty(ref _isPercentageRange, value);
+        }
+
+        public GradeRange(double gradeMin, double gradeMax, bool isPercentageRange = false) 
+        {
+            GradeMin = gradeMin.ToString().Replace(',', '.');
+            GradeMax = gradeMax.ToString().Replace(',', '.');
+            IsPercentageRange = isPercentageRange;
         }
     }
 }
