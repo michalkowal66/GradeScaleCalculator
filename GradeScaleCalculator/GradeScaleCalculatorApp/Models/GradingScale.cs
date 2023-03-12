@@ -74,12 +74,12 @@ namespace GradeScaleCalculatorApp.Models
         public GradingScale()
         {
             Name = "Domyślna skala";
-            AGrade = new GradeRange(95, 100);
-            BGrade = new GradeRange(85, 95);
-            CGrade = new GradeRange(70, 85);
-            DGrade = new GradeRange(55, 70);
-            EGrade = new GradeRange(40, 55);
-            FGrade = new GradeRange(0, 40);
+            AGrade = new GradeRange(95, 100, true);
+            BGrade = new GradeRange(85, 95, true);
+            CGrade = new GradeRange(70, 85, true);
+            DGrade = new GradeRange(55, 70, true);
+            EGrade = new GradeRange(40, 55, true);
+            FGrade = new GradeRange(0, 40, true);
         }
 
         public GradingScale Clone()
