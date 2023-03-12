@@ -29,7 +29,7 @@ namespace GradeScaleCalculatorApp.ViewModels
             {
                 if (SetProperty(ref _currentGradingScale, value))
                 {
-                    CalculatedScoring = Scoring.FromScale(value, MaxPoints);
+                    CalculatedScoring = Scoring.FromScale(value, MaxPointsValue);
                 }
             }
         }
@@ -40,16 +40,22 @@ namespace GradeScaleCalculatorApp.ViewModels
             set => SetProperty(ref _calculatedScoring, value);
         }
 
-        public int MaxPoints
+        public string MaxPoints
         {
-            get => _maxPoints;
+            get => MaxPointsValue.ToString();
             set
             {
-                if (SetProperty(ref _maxPoints, value))
+                if (!int.TryParse(value, out int parsedInput)) parsedInput = 0;
+                if (SetProperty(ref _maxPoints, parsedInput))
                 {
-                    CalculatedScoring = Scoring.FromScale(CurrentGradingScale, value);
+                    CalculatedScoring = Scoring.FromScale(CurrentGradingScale, parsedInput);
                 }
             }
+        }
+
+        public int MaxPointsValue
+        {
+            get => _maxPoints;
         }
 
         private void RefreshCurrentGradingScale(object sender, NotifyCollectionChangedEventArgs e)

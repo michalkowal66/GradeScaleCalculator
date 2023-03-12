@@ -4,7 +4,7 @@ using System.Globalization;
 
 namespace GradeScaleCalculatorApp.Models
 {
-    public class GradeRange : ObservableObject
+    public class GradeScale : ObservableObject
     {
         private double _gradeMin;
         private double _gradeMax;
@@ -15,6 +15,7 @@ namespace GradeScaleCalculatorApp.Models
             set
             {
                 if (!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out double parsedInput)) parsedInput = 0.0;
+                parsedInput = parsedInput > 100 ? 100 : parsedInput;
                 SetProperty(ref _gradeMin, parsedInput);
             }
         }
@@ -30,6 +31,7 @@ namespace GradeScaleCalculatorApp.Models
             set
             {
                 if (!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out double parsedInput)) parsedInput = 0.0;
+                parsedInput = parsedInput > 100 ? 100 : parsedInput;
                 SetProperty(ref _gradeMax, parsedInput);
             }
         }
@@ -39,15 +41,15 @@ namespace GradeScaleCalculatorApp.Models
             get => Math.Round(_gradeMax);
         }
 
-        public GradeRange(double gradeMin, double gradeMax) 
+        public GradeScale(double gradeMin, double gradeMax)
         {
             GradeMin = gradeMin.ToString().Replace(',', '.');
             GradeMax = gradeMax.ToString().Replace(',', '.');
         }
 
-        public GradeRange Clone()
+        public GradeScale Clone()
         {
-            return new GradeRange(_gradeMin, _gradeMax);
+            return new GradeScale(_gradeMin, _gradeMax);
         }
     }
 }

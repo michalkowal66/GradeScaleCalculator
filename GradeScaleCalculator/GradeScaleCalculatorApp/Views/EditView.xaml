@@ -104,12 +104,14 @@
             
             <TextBox Grid.Row="1" Grid.Column="1"
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.AGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="1" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="1" Grid.Column="3"
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.AGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
@@ -119,12 +121,14 @@
             
             <TextBox Grid.Row="2" Grid.Column="1" 
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.BGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="2" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="2" Grid.Column="3" 
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.BGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
@@ -134,12 +138,14 @@
             
             <TextBox Grid.Row="3" Grid.Column="1" 
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.CGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="3" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="3" Grid.Column="3" 
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.CGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
@@ -149,12 +155,14 @@
             
             <TextBox Grid.Row="4" Grid.Column="1" 
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.DGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="4" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="4" Grid.Column="3" 
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.DGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
@@ -164,12 +172,14 @@
             
             <TextBox Grid.Row="5" Grid.Column="1" 
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.EGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="5" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="5" Grid.Column="3" 
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.EGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
@@ -179,12 +189,14 @@
             
             <TextBox Grid.Row="6" Grid.Column="1"
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.FGrade.GradeMin, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="6" Grid.Column="2"
                    Style="{StaticResource CenteredLabel}" 
                    Content="-"/>
             <TextBox Grid.Row="6" Grid.Column="3" 
                      Style="{StaticResource NumericTextBox}"
+                     PreviewTextInput="TextBoxNumberValidation"
                      Text="{Binding EditedGradingScale.FGrade.GradeMax, UpdateSourceTrigger=PropertyChanged}"/>
 
             
