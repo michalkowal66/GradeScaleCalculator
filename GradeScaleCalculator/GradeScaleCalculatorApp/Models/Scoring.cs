@@ -16,6 +16,8 @@ namespace GradeScaleCalculatorApp.Models
 
         private GradeRange _fGrade;
 
+        private const double _percent = 0.01;
+
         public GradeRange AGrade
         {
             get => _aGrade;
@@ -65,33 +67,33 @@ namespace GradeScaleCalculatorApp.Models
         public static Scoring FromScale(GradingScale gradingScale, int maxPoints)
         {
             GradeRange aGrade = new GradeRange(
-                (double)gradingScale.AGrade.GradeMinValue / 100 * maxPoints,
-                (double)gradingScale.AGrade.GradeMaxValue / 100 * maxPoints
+                (double)gradingScale.AGrade.GradeMinValue * _percent * maxPoints,
+                (double)gradingScale.AGrade.GradeMaxValue * _percent * maxPoints
             );
 
             GradeRange bGrade = new GradeRange(
-                (double)gradingScale.BGrade.GradeMinValue / 100 * maxPoints,
-                (double)gradingScale.BGrade.GradeMaxValue / 100 * maxPoints
+                (double)gradingScale.BGrade.GradeMinValue * _percent * maxPoints,
+                (double)gradingScale.BGrade.GradeMaxValue * _percent * maxPoints
             );
 
             GradeRange cGrade = new GradeRange(
-                (double)gradingScale.CGrade.GradeMinValue / 100 * maxPoints, 
-                (double)gradingScale.CGrade.GradeMaxValue / 100 * maxPoints
+                (double)gradingScale.CGrade.GradeMinValue * _percent * maxPoints, 
+                (double)gradingScale.CGrade.GradeMaxValue * _percent * maxPoints
             );
 
             GradeRange dGrade = new GradeRange(
-                (double)gradingScale.DGrade.GradeMinValue / 100 * maxPoints,
-                (double)gradingScale.DGrade.GradeMaxValue / 100 * maxPoints
+                (double)gradingScale.DGrade.GradeMinValue * _percent * maxPoints,
+                (double)gradingScale.DGrade.GradeMaxValue * _percent * maxPoints
             );
 
             GradeRange eGrade = new GradeRange(
-                (double)gradingScale.EGrade.GradeMinValue / 100 * maxPoints,
-                (double)gradingScale.EGrade.GradeMaxValue / 100 * maxPoints
+                (double)gradingScale.EGrade.GradeMinValue * _percent * maxPoints,
+                (double)gradingScale.EGrade.GradeMaxValue * _percent * maxPoints
             );
 
             GradeRange fGrade = new GradeRange(
-                (double)gradingScale.FGrade.GradeMinValue / 100 * maxPoints,
-                (double)gradingScale.FGrade.GradeMaxValue / 100 * maxPoints
+                (double)gradingScale.FGrade.GradeMinValue * _percent * maxPoints,
+                (double)gradingScale.FGrade.GradeMaxValue * _percent * maxPoints
             );
 
             Scoring scoring = new(aGrade, bGrade, cGrade, dGrade, eGrade, fGrade);
