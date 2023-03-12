@@ -73,7 +73,7 @@ namespace GradeScaleCalculatorApp.Models
 
         public GradingScale()
         {
-            Name = "Domyślna skala";
+            Name = Statics.DefaultGradingScaleName;
             AGrade = new GradeScale(95, 100);
             BGrade = new GradeScale(85, 95);
             CGrade = new GradeScale(70, 85);
