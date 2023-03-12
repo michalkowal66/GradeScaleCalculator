@@ -6,17 +6,17 @@ namespace GradeScaleCalculatorApp.Models
     {
         private string _name;
 
-        private GradeRange _aGrade;
+        private GradeScale _aGrade;
 
-        private GradeRange _bGrade;
+        private GradeScale _bGrade;
 
-        private GradeRange _cGrade;
+        private GradeScale _cGrade;
 
-        private GradeRange _dGrade;
+        private GradeScale _dGrade;
 
-        private GradeRange _eGrade;
+        private GradeScale _eGrade;
 
-        private GradeRange _fGrade;
+        private GradeScale _fGrade;
 
         public string Name
         {
@@ -24,43 +24,43 @@ namespace GradeScaleCalculatorApp.Models
             set => SetProperty(ref _name, value);
         }
 
-        public GradeRange AGrade
+        public GradeScale AGrade
         {
             get => _aGrade;
             set => SetProperty(ref _aGrade, value);
         }
 
-        public GradeRange BGrade
+        public GradeScale BGrade
         {
             get => _bGrade;
             set => SetProperty(ref _bGrade, value);
         }
 
-        public GradeRange CGrade
+        public GradeScale CGrade
         {
             get => _cGrade;
             set => SetProperty(ref _cGrade, value);
         }
 
-        public GradeRange DGrade
+        public GradeScale DGrade
         {
             get => _dGrade;
             set => SetProperty(ref _dGrade, value);
         }
 
-        public GradeRange EGrade
+        public GradeScale EGrade
         {
             get => _eGrade;
             set => SetProperty(ref _eGrade, value);
         }
 
-        public GradeRange FGrade
+        public GradeScale FGrade
         {
             get => _fGrade;
             set => SetProperty(ref _fGrade, value);
         }
 
-        public GradingScale(string name, GradeRange aGrade, GradeRange bGrade, GradeRange cGrade, GradeRange dGrade, GradeRange eGrade, GradeRange fGrade)
+        public GradingScale(string name, GradeScale aGrade, GradeScale bGrade, GradeScale cGrade, GradeScale dGrade, GradeScale eGrade, GradeScale fGrade)
         {
             Name = name;
             AGrade = aGrade;
@@ -74,12 +74,12 @@ namespace GradeScaleCalculatorApp.Models
         public GradingScale()
         {
             Name = "Domyślna skala";
-            AGrade = new GradeRange(95, 100, true);
-            BGrade = new GradeRange(85, 95, true);
-            CGrade = new GradeRange(70, 85, true);
-            DGrade = new GradeRange(55, 70, true);
-            EGrade = new GradeRange(40, 55, true);
-            FGrade = new GradeRange(0, 40, true);
+            AGrade = new GradeScale(95, 100);
+            BGrade = new GradeScale(85, 95);
+            CGrade = new GradeScale(70, 85);
+            DGrade = new GradeScale(55, 70);
+            EGrade = new GradeScale(40, 55);
+            FGrade = new GradeScale(0, 40);
         }
 
         public GradingScale Clone()
