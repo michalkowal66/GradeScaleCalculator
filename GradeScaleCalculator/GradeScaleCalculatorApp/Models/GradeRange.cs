@@ -55,5 +55,10 @@ namespace GradeScaleCalculatorApp.Models
             GradeMax = gradeMax.ToString().Replace(',', '.');
             IsPercentageRange = isPercentageRange;
         }
+
+        public GradeRange Clone()
+        {
+            return new GradeRange(_gradeMin, _gradeMax, _isPercentageRange);
+        }
     }
 }
