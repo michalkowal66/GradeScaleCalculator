@@ -86,12 +86,12 @@ namespace GradeScaleCalculatorApp.Models
         {
             return new GradingScale(
                 Name.ToString(),
-                new GradeRange(AGrade.GradeMin, AGrade.GradeMax),
-                new GradeRange(BGrade.GradeMin, BGrade.GradeMax),
-                new GradeRange(CGrade.GradeMin, CGrade.GradeMax),
-                new GradeRange(DGrade.GradeMin, DGrade.GradeMax),
-                new GradeRange(EGrade.GradeMin, EGrade.GradeMax),
-                new GradeRange(FGrade.GradeMin, FGrade.GradeMax)
+                AGrade.Clone(),
+                BGrade.Clone(),
+                CGrade.Clone(),
+                DGrade.Clone(),
+                EGrade.Clone(),
+                FGrade.Clone()
             );
         }
 
