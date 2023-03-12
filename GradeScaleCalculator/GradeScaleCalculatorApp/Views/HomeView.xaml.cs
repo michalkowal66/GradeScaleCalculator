@@ -24,5 +24,10 @@ namespace GradeScaleCalculatorApp.Views
         {
             InitializeComponent();
         }
+
+        private void TextBoxNumberValidation(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !int.TryParse(e.Text, out int _);
+        }
     }
 }

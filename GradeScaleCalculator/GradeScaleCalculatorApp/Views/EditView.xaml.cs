@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -23,6 +24,11 @@ namespace GradeScaleCalculatorApp.Views
         public EditView()
         {
             InitializeComponent();
+        }
+
+        private void TextBoxNumberValidation(object sender, TextCompositionEventArgs e)
+        {
+            e.Handled = !int.TryParse(e.Text, out int _);
         }
     }
 }
