@@ -1,8 +1,8 @@
-﻿using GradeScaleCalculatorApp.Models;
+﻿using ScoringCalculator.Models;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace GradeScaleCalculatorApp.Services
+namespace ScoringCalculator.Services
 {
     internal static class GradingScalesFactoryService
     {

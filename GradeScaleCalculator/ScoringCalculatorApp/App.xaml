@@ -1,9 +1,9 @@
-﻿<Application x:Class="GradeScaleCalculatorApp.App"
+﻿<Application x:Class="ScoringCalculator.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:GradeScaleCalculatorApp"
-             xmlns:viewmodels="clr-namespace:GradeScaleCalculatorApp.ViewModels"
-             xmlns:views="clr-namespace:GradeScaleCalculatorApp.Views"
+             xmlns:local="clr-namespace:ScoringCalculator"
+             xmlns:viewmodels="clr-namespace:ScoringCalculator.ViewModels"
+             xmlns:views="clr-namespace:ScoringCalculator.Views"
              xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2"
              StartupUri="Views/MainWindow.xaml">
     <Application.Resources>

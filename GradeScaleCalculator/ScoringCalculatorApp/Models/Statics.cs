@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace GradeScaleCalculatorApp.Models
+namespace ScoringCalculator.Models
 {
     public static class Statics
     {

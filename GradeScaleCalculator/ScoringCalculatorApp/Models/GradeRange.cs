@@ -2,7 +2,7 @@
 using System;
 using System.Globalization;
 
-namespace GradeScaleCalculatorApp.Models
+namespace ScoringCalculator.Models
 {
     public class GradeRange : ObservableObject
     {

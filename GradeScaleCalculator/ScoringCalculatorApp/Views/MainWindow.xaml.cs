@@ -1,8 +1,8 @@
-﻿using GradeScaleCalculatorApp.ViewModels;
+﻿using ScoringCalculator.ViewModels;
 using System.Windows;
 using System.Windows.Input;
 
-namespace GradeScaleCalculatorApp
+namespace ScoringCalculator
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

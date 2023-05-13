@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace GradeScaleCalculatorApp.Models
+namespace ScoringCalculator.Models
 {
     public class GradingScale : ObservableObject
     {

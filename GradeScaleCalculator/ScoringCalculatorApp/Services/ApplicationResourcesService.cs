@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Reflection;
 
-namespace GradeScaleCalculatorApp.Services
+namespace ScoringCalculator.Services
 {
     internal static class ApplicationResourcesService
     {

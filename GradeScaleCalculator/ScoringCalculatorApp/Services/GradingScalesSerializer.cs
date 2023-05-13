@@ -1,8 +1,8 @@
-﻿using GradeScaleCalculatorApp.Models;
+﻿using ScoringCalculator.Models;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 
-namespace GradeScaleCalculatorApp.Services
+namespace ScoringCalculator.Services
 {
     internal static class GradingScalesSerializer
     {

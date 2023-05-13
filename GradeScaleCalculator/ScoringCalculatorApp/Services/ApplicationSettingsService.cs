@@ -1,11 +1,11 @@
-﻿using static GradeScaleCalculatorApp.Models.Statics;
+﻿using static ScoringCalculator.Models.Statics;
 using System.IO;
 using System.Text;
 using System.Collections;
-using GradeScaleCalculatorApp.Models;
+using ScoringCalculator.Models;
 using System.Collections.Generic;
 
-namespace GradeScaleCalculatorApp.Services
+namespace ScoringCalculator.Services
 {
     internal static class ApplicationSettingsService
     {

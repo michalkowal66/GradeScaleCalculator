@@ -1,10 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
-using GradeScaleCalculatorApp.Models;
+using ScoringCalculator.Models;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Linq;
 
-namespace GradeScaleCalculatorApp.ViewModels
+namespace ScoringCalculator.ViewModels
 {
     public class HomeViewModel : ObservableObject
     {

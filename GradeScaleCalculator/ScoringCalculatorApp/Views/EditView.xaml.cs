@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,14 +14,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace GradeScaleCalculatorApp.Views
+namespace ScoringCalculator.Views
 {
     /// <summary>
-    /// Interaction logic for HomeView.xaml
+    /// Interaction logic for EditView.xaml
     /// </summary>
-    public partial class HomeView : UserControl
+    public partial class EditView : UserControl
     {
-        public HomeView()
+        public EditView()
         {
             InitializeComponent();
         }
